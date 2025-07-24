@@ -1,4 +1,4 @@
-package com.backend.catalog_service;
+package com.backend.bookstore.catalog;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -9,10 +9,9 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
 
-	@Bean
-	@ServiceConnection
-	MySQLContainer<?> mysqlContainer() {
-		return new MySQLContainer<>(DockerImageName.parse("mysql:8.0.36"));
-	}
-
+    @Bean
+    @ServiceConnection
+    MySQLContainer<?> mysqlContainer() {
+        return new MySQLContainer<>(DockerImageName.parse("mysql:8.0.36"));
+    }
 }
